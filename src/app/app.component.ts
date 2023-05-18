@@ -57,15 +57,13 @@ export class AppComponent {
     }
   ]
 
-
-
+  empleadosBuckup = this.empleados;
 
   buscar(e : string){
-    this.empleados.forEach(empleado => {
-      if(empleado.nombre === e || empleado.apellido === e){
-        
-      }
-    });
+    this.empleados = this.empleadosBuckup;  
+    this.empleados = this.empleados.filter(empleado =>{
+      return empleado.nombre === e || empleado.apellido === e
+    })
   }
 
 }
